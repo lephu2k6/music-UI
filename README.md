@@ -12,5 +12,7 @@ This is a simple web interface project built with HTML, CSS and JavaScript. This
 [Facebook](https://www.facebook.com/profile.php?id=100070368791149)
 
 ## Demo Interface
-Here is a preview of the user interface:
-![Preview Interface] : (./assets/image/demo.png)
+Here is a preview of the user interface
+
+
+![Preview Interface](./assets/image/demo.png)
