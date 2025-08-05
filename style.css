@@ -1,0 +1,286 @@
+:root {
+    --primary-color: #1db954; /* Spotify green */
+    --text-color: #f5f5f5;
+    --bg-color: #121212;
+    --card-color: #181818;
+    --accent-color: #fff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .player {
+    max-width: 680px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .dashboard {
+    background-color: var(--card-color);
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 680px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    border-bottom: 1px solid #333;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  header h4 {
+    color: var(--primary-color);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  header h2 {
+    color: var(--accent-color);
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  .cd {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cd-thumb {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-color);
+    animation: rotateCD 20s linear infinite;
+  }
+  
+  @keyframes rotateCD {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .control {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 18px 0;
+  }
+  
+  .btn {
+    font-size: 20px;
+    color: var(--accent-color);
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+  }
+  
+  .btn-toggle-play {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px var(--primary-color);
+  }
+  
+  .player .icon-pause {
+    display: none;
+  }
+  
+  .player.playing .icon-play {
+    display: none;
+  }
+  
+  .player.playing .icon-pause {
+    display: inline-block;
+  }
+  
+  .progress {
+    width: 100%;
+    height: 6px;
+    background: #444;
+    appearance: none;
+    outline: none;
+    margin-top: 12px;
+    border-radius: 5px;
+  }
+  
+  .progress::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .playlist {
+    margin-top: 420px;
+    padding: 16px;
+    background-color: var(--bg-color);
+  }
+  
+  .song {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-color);
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  
+  .song:hover {
+    background-color: #222;
+  }
+  
+  .song.active {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .song .thumb {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 16px;
+  }
+  
+  .song .body {
+    flex: 1;
+  }
+  
+  .song .title {
+    font-size: 18px;
+    color: var(--accent-color);
+  }
+  
+  .song .author {
+    font-size: 13px;
+    color: #aaa;
+  }
+  
+  .song .option {
+    font-size: 20px;
+    color: #999;
+  }
+  
+  /* --- FIXED INFO SECTION --- */
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    max-width: 420px;
+    margin: 60px auto 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .info-lephu {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .icon-info {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .icon-info-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+    color: #fff;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    background-color: #444;
+  }
+  
+  .icon-info-child:hover {
+    transform: scale(1.1);
+    color: #fff;
+  }
+  
+  .icon-info-child.facebook:hover {
+    background-color: #1877f2;
+  }
+  
+  .icon-info-child.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+  
+  .icon-info-child.telegram:hover {
+    background-color: #229ED9;
+  }
+  
+  /* SNOWFLAKE */
+  .snowflake {
+    color: #fff;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    user-select: none;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes snowflakes-fall {
+    0% { top: -10%; }
+    100% { top: 100%; }
+  }
+  
+  @keyframes snowflakes-shake {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(80px); }
+  }
+  
+  .snowflake:nth-child(1) { left: 10%; animation-delay: 1s, 1s; font-size: 20px; }
+  .snowflake:nth-child(2) { left: 20%; animation-delay: 2s, 1.5s; font-size: 28px; }
+  .snowflake:nth-child(3) { left: 30%; animation-delay: 3s, 1s; font-size: 16px; }
+  .snowflake:nth-child(4) { left: 40%; animation-delay: 4s, 2s; font-size: 22px; }
+  .snowflake:nth-child(5) { left: 50%; animation-delay: 5s, 2s; font-size: 18px; }
+  .snowflake:nth-child(6) { left: 60%; animation-delay: 6s, 3s; font-size: 26px; }
+  .snowflake:nth-child(7) { left: 70%; animation-delay: 7s, 2s; font-size: 14px; }
+  .snowflake:nth-child(8) { left: 80%; animation-delay: 8s, 1.5s; font-size: 30px; }
+  .snowflake:nth-child(9) { left: 90%; animation-delay: 9s, 1s; font-size: 25px; }
+  .snowflake:nth-child(10) { left: 100%; animation-delay: 10s, 0.5s; font-size: 17px; }
+  
